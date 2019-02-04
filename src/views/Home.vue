@@ -3,7 +3,6 @@
     <div v-for="product in prod"
       :key="product.productId">
       <product-card :product="product"></product-card>
-      <!-- {{product.desc}} -->
       </div>
   </div>
 </template>

@@ -12,7 +12,10 @@
       </b-nav>
 
     </div>
+    <b-container flex>
     <router-view/>
+</b-container>
+  
   </div>
 </template>
 

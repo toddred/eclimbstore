@@ -10,11 +10,11 @@ export default new Vuex.Store({
     cust:customer,
     prod:products
   },
-  getter:{
-    PRODUCTS: state =>{
-      return state.prod
-    }
-  },
+  // getter:{
+  //   PRODUCTS: state =>{
+  //     return state.prod
+  //   }
+  // },
   mutations: {
 
   },
