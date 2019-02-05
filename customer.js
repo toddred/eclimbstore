@@ -1,7 +1,8 @@
 export default [
   {
     accountId: 1,
-    name: "Todd Rederburg",
+    firstName: "Todd", 
+    lastName:"Rederburg",
     email: "Todd@Todd.com",
     userName: "HotToddy1",
     password: "TODDISTHEBEST",
@@ -17,6 +18,7 @@ export default [
         createdOn: new Date("Feb 3, 2019 9:46PM"),
         cartItems: [
           {
+            cartItemId:0,
             quantity: 2,
             item: {
               productId: "3",
@@ -29,6 +31,7 @@ export default [
             }
           },
           {
+            cartItemId:1,
             quantity: 1,
             item: {
               productId: "4",
@@ -38,10 +41,16 @@ export default [
               rating: 4,
               img: "https://picsum.photos/600/300/?image=25",
               comments: []
-            }
+            }//,
+            //cartItemTotal(){ return this.item.price * this.quantity}
           }
         ],
-        active: true
+        active: true,
+        // cartSubTotal:()=>{
+        //   return this.cartItems.forEach(item => {
+        //     return item.cartSubTotal()
+        //   });
+        // }
       }
     ],
     Comment: [

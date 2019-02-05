@@ -24,7 +24,6 @@
             <b-col sm="4">
               <b-btn class="mt-3" variant="outline-danger" block @click="hideModal">Close Me</b-btn>
             </b-col>
-            <b-input-lable>Quantity</b-input-lable>
             <b-col sm="4">
               <b-form-input type="number"></b-form-input>
             </b-col>
