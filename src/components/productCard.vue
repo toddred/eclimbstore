@@ -1,19 +1,20 @@
 <template>
   <div>
-    <div>
+    <b-col sm="12" md="6" lg="3">
       <b-card
-        :title="product.price.toString()"
+        :title="'$'+product.price.toString()"
         :img-src="product.img"
         img-alt="Image"
         img-top
         tag="article"
         style="max-width: 20rem;"
-        class="mb-2">
+        class="mb-2"
+      >
         <p class="card-text">{{product.desc}}</p>
-        <b-button href="#" variant="outline-primary">Add to Cart</b-button>
+        <b-button @click="addToCart" variant="outline-primary">Add to Cart</b-button>
         <product-modal :product="product"></product-modal>
       </b-card>
-    </div>
+    </b-col>
   </div>
 </template>
 <script>
@@ -23,6 +24,11 @@ export default {
   components: {
     productModal
   },
-  props: ["product"]
+  props: ["product"],
+  methods: {
+    addToCart() {
+      alert("you did it!");
+    }
+  }
 };
 </script>

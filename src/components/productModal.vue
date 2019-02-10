@@ -8,32 +8,33 @@
         <p>${{product.price}} | Rating: {{product.rating.toString()}} | Available: {{product.available.toString()}}</p>
       </div>
       <b-row>
-                  <b-col sm="4">
+        <b-col sm="4">
           <b-form-input type="number"></b-form-input>
         </b-col>
         <b-col sm="4">
           <b-btn class="mt-3" variant="outline-danger" block @click="hideModal">Close Me</b-btn>
         </b-col>
-
         <b-col sm="4">
-          <b-btn class="mt-3" variant="outline-primary" block>Add To Cart</b-btn>
+          <b-btn class="mt-3" variant="outline-primary" @click="addToCart" block>Add To Cart</b-btn>
         </b-col>
       </b-row>
     </b-modal>
   </div>
 </template>
-
 <script>
 export default {
   name: "product-modal",
-  props:["product"],
+  props: ["product"],
 
-    methods: {
+  methods: {
     showModal() {
       this.$refs.myModalRef.show();
     },
     hideModal() {
       this.$refs.myModalRef.hide();
+    },
+    addToCart(){
+        alert("you did it!");
     }
   }
 };
