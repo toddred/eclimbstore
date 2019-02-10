@@ -15,6 +15,26 @@ export default new Vuex.Store({
     carts:carts,
     comments:comments
   },
+  getters: {
+    saleItems: state => {
+      let sale = state.carts.cartItems.map(cartItems=>{
+          return{
+            desc: cartItems.desc+'*',
+            price: cartItems.price/2
+          }
+        })
+        return sale;
+    },
+    cartTotal: state => {
+      let total = 0;
+      let cartitems = state.carts.cartItems
+      cartitems.forEach(c => {
+        total+= (c.quantity*c.price);
+      });
+      return total;
+    }
+
+  },
 
   mutations: {
 

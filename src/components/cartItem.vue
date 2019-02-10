@@ -2,10 +2,10 @@
   <div>
     <div v-for="cartItem in carts.cartItems" :key="cartItem.cartItemId">
       <p>
-        {{cartItem.item.desc}} |
+        {{cartItem.desc}} |
         Quantity {{cartItem.quantity}} |
-        Unit Price: ${{cartItem.item.price}} |
-        Total Price: ${{cartItem.item.price*cartItem.quantity}}
+        Unit Price: ${{cartItem.price}} |
+        Total Price: ${{cartItem.price*cartItem.quantity}}
         <quant-tools></quant-tools>
       </p>
     </div>

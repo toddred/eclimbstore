@@ -6,7 +6,7 @@
       <b-row>
       <cart-item></cart-item>
       </b-row>
-      <h4>Sub total: $209.98*</h4>
+      <h4>Sub total: ${{cartTotal}}</h4>
     </div>
   </div>
 </template>
@@ -17,6 +17,13 @@ export default {
   components: {
     cartItem
   },
-  computed: mapState(["cust", "carts"])
+  computed:{
+    cartTotal(){
+      return this.$store.getters.cartTotal;
+    },
+    ...mapState(["cust", "carts"])
+  }
+  
+  
 };
 </script>

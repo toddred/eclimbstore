@@ -1,6 +1,6 @@
 export default 
   {
-    accountId: null,
+    accountId: 0,
     firstName: "Todd",
     lastName: "Rederburg",
     email: "Todd@Todd.com",
