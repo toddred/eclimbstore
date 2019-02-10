@@ -2,7 +2,6 @@
   <div>
       <b-card 
       :title="cust.firstName+' '+cust.lastName"
-      
       >
         <p>Email: {{cust.email}}</p>
         <p>Username: {{cust.userName}}</p>

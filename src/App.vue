@@ -1,22 +1,21 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <b-nav tabs>
-        <b-nav-item>
-          <router-link to="/">Shop</router-link>
-        </b-nav-item>
-        <b-nav-item>
-          <router-link to="/cart">Cart</router-link>
-        </b-nav-item>
-        <b-nav-item>
-          <router-link to="/account">Account</router-link>
-        </b-nav-item>
-      </b-nav>
-    </div>
+    <app-header></app-header>
     <b-container>
       <router-view/>
     </b-container>
   </div>
 </template>
+<script>
+import appHeader from "./components/layout/appHeader"
+export default {
+  components:{
+    appHeader,
+    
+  }
+}
+</script>
+
 <style>
+
 </style>
