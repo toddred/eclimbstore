@@ -27,9 +27,9 @@ export default new Vuex.Store({
     },
     cartTotal: state => {
       let total = 0;
-      let cartitems = state.carts.cartItems
-      cartitems.forEach(c => {
-        total+= (c.quantity*c.price);
+      state.carts.cartItems
+        .forEach(c => {
+          total+= (c.quantity*c.price);
       });
       return total;
     }
@@ -37,6 +37,10 @@ export default new Vuex.Store({
   },
 
   mutations: {
+    addItem: state => {
+      
+      return state.carts.cartItems[1].quantity++;
+    }
 
   },
   actions: {

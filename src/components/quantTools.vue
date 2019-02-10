@@ -2,7 +2,7 @@
   <div>
     <b-btn-toolbar>
       <b-btn-group class="mx-1">
-        <b-btn outline-primary>+</b-btn>
+        <b-btn outline-primary @click="addItem">+</b-btn>
         <b-btn>-</b-btn>
       </b-btn-group>
       <b-btn-group class="mx-1">
@@ -12,13 +12,17 @@
   </div>
 </template>
 <script>
+import {mapState} from 'vuex';
 export default {
     name: "quant-tools",
 
     methods:{
-        addItem(){
-
+        addItem:function(){
+          this.$store.commit('addItem')
         }
-    }
+    },
+        computed:mapState([
+    'carts',
+  ])
 }
 </script>
