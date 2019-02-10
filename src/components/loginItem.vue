@@ -2,21 +2,18 @@
 <template>
   <div>
     <b-form inline>
-      <label class="sr-only" for="inlineFormInputName2">Name</label>
-      <b-input class="mb-2 mr-sm-2 mb-sm-0" id="inlineFormInputName2" placeholder="Jane Doe"/>
-      <label class="sr-only" for="inlineFormInputGroupUsername2">Username</label>
-      <b-input-group left="@" class="mb-2 mr-sm-2 mb-sm-0">
-        <b-input id="inlineFormInputGroupUsername2" placeholder="Username"/>
-      </b-input-group>
-      <b-form-checkbox class="mb-2 mr-sm-2 mb-sm-0">Remember me</b-form-checkbox>
-      <b-button variant="primary">Save</b-button>
+      <b-input size="sm" class="mb-2 mr-sm-2 mb-sm-0" id="username" placeholder="Username"/>
+      <b-input type="password" id="passwordg" size="sm" placeholder="Password"/>
+      <b-button size="sm" variant="outline-primary">Submit</b-button>
     </b-form>
   </div>
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
-    name:"login-item"
+  name: "login-item",
+  computed: mapState(["cust"]),
 };
 </script>
 

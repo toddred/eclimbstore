@@ -7,9 +7,11 @@
       <b-nav-item>
         <router-link to="/cart">Cart</router-link>
       </b-nav-item>
-      <b-nav-item>
-        <router-link v-if="cust.firstName != null" to="/account">{{cust.firstName}}</router-link>
-
+      <b-nav-item v-if="cust.accountId != null">
+        <router-link to="/account">Hi {{cust.firstName}}</router-link>
+      </b-nav-item>
+      <b-nav-item v-if="cust.accountId == null">
+       <login-item></login-item>
       </b-nav-item>
     </b-nav>
   </div>
@@ -23,7 +25,7 @@ export default {
   components:{
     loginItem
   },
-  computed:(['cust'])
+  computed: mapState(["cust"])
   
 };
 </script>
