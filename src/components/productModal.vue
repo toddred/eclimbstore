@@ -9,7 +9,7 @@
       </div>
       <b-row>
         <b-col sm="4">
-          <b-form-input type="number"></b-form-input>
+          <b-form-select v-model="selected" :options="count"></b-form-select>
         </b-col>
         <b-col sm="4">
           <b-btn class="mt-3" variant="outline-danger" block @click="hideModal">Close Me</b-btn>
@@ -24,8 +24,12 @@
 <script>
 export default {
   name: "product-modal",
+  data(){
+    return{
+      selected:1
+    }
+  },
   props: ["product"],
-
   methods: {
     showModal() {
       this.$refs.myModalRef.show();
@@ -33,8 +37,25 @@ export default {
     hideModal() {
       this.$refs.myModalRef.hide();
     },
-    addToCart(){
-        alert("you did it!");
+    addToCart: function() {
+      let payload = {
+        productId: this.product.productId,
+        quantity: this.selected.value
+      };
+      alert(count);
+      this.$store.commit("addToCart", payload);
+      this.$refs.myModalRef.hide();
+    }
+  },
+  computed:{
+    
+    count(){
+      let avali = []
+      for (let i = 1; i <= this.product.available; i++) {
+        let a ={ value: i, text: i }
+        avali.push(a)
+      }
+      return avali
     }
   }
 };
