@@ -6,7 +6,7 @@
         Quantity {{cartItem.quantity}} |
         Unit Price: ${{cartItem.price}} |
         Total Price: ${{cartItem.price*cartItem.quantity}}
-        <quant-tools></quant-tools>
+        <quant-tools :cartItemId="cartItem.cartItemId"></quant-tools>
       </p>
     </div>
   </div>

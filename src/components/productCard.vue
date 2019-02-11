@@ -26,9 +26,11 @@ export default {
   },
   props: ["product"],
   methods: {
-    addToCart() {
-      alert("you did it!");
+          addToCart:function(){
+            let payload ={"productId":this.product.productId, "quantity":1}
+          this.$store.commit('addToCart',payload)
+        },
     }
   }
-};
+
 </script>
