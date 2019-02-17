@@ -5,7 +5,7 @@ export default  [
         price:219.99,
         available:4,
         rating:5,
-        img:'./assets/static/rope.jpg/',
+        img:'~/assets/static/rope.jpg/',
         comments:[]
       },
       {

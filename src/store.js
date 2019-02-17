@@ -5,6 +5,7 @@ import products from '../products'
 import carts from '../carts'
 import comments from '../comments'
 import cartItem from './assets/CartItem'
+import orders from '../orders'
 
 
 Vue.use(Vuex)
@@ -14,7 +15,9 @@ export default new Vuex.Store({
     cust:customer,
     prod:products,
     carts:carts,
-    comments:comments
+    comments:comments,
+    tempMsg:'Hi Todd',
+    orders:orders
   },
   getters: {
     saleItems: state => {
@@ -30,7 +33,7 @@ export default new Vuex.Store({
       let total = 0;
       state.carts.cartItems
         .forEach(c => {
-          total+= (c.quantity*c.price);
+          total+= c.quantity*c.price;
       });
       return total;
     }
@@ -44,6 +47,7 @@ export default new Vuex.Store({
     },
     minusItem(state,payload){
       let i= state.carts.cartItems.findIndex(c=>c.cartItemId == payload)
+      if(state.carts.cartItems[i].quantity>0)
       return state.carts.cartItems[i].quantity--;
     },
     removeItem(state,payload){

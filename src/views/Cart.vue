@@ -1,13 +1,11 @@
 <template>
   <div class="Cart">
-    <h2>This is {{cust.firstName}}'s cart</h2>
-    <p>Cart from {{carts.createdOn.toLocaleString()}}</p>
-    <div>
-      <b-row>
+    <b-card title="Cart">
+    <p>started on {{carts.createdOn.toLocaleDateString()}}</p>
       <cart-item></cart-item>
-      </b-row>
-      <h4>Sub total: ${{cartTotal}}</h4>
-    </div>
+      <h4>Sub total: ${{cartTotal.toLocaleString()}}</h4>
+      <b-button>Place Order</b-button>
+    </b-card>
   </div>
 </template>
 <script>
@@ -23,7 +21,5 @@ export default {
     },
     ...mapState(["cust", "carts"])
   }
-  
-  
 };
 </script>

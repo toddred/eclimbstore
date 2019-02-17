@@ -5,7 +5,7 @@
         {{cartItem.desc}} |
         Quantity {{cartItem.quantity}} |
         Unit Price: ${{cartItem.price}} |
-        Total Price: ${{cartItem.price*cartItem.quantity}}
+        Total Price: ${{(cartItem.price*cartItem.quantity).toLocaleString()}}
         <quant-tools :cartItemId="cartItem.cartItemId"></quant-tools>
       </p>
     </div>

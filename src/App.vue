@@ -2,7 +2,7 @@
   <div id="app">
     <app-header/>
     <b-container>
-              <b-alert show>Default Alert</b-alert>
+        <b-alert show>Default Alert</b-alert>
       <router-view/>
     </b-container>
   </div>
