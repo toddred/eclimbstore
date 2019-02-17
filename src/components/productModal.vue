@@ -3,13 +3,13 @@
     <b-button variant="outline-success" @click="showModal">Learn More</b-button>
     <b-modal ref="myModalRef" hide-footer :title="product.desc">
       <div class="d-block text-center">
-        <h3>{{product.desc}}</h3>
+        
         <b-img :src="product.img" fluid></b-img>
         <p>${{product.price}} | Rating: {{product.rating.toString()}} | Available: {{product.available.toString()}}</p>
       </div>
       <b-row>
         <b-col sm="4">
-          <b-form-select v-model="selected" :options="count"></b-form-select>
+          <b-form-select class="mt-3" v-model="selected" :options="count"></b-form-select>
         </b-col>
         <b-col sm="4">
           <b-btn class="mt-3" variant="outline-danger" block @click="hideModal">Close Me</b-btn>
@@ -24,9 +24,9 @@
 <script>
 export default {
   name: "product-modal",
-  data(){
+  data:()=>{
     return{
-      selected:1
+      selected :1
     }
   },
   props: ["product"],
@@ -38,24 +38,24 @@ export default {
       this.$refs.myModalRef.hide();
     },
     addToCart: function() {
+     
       let payload = {
         productId: this.product.productId,
-        quantity: this.selected.value
+        quantity: this.selected
       };
-      alert(count);
+
       this.$store.commit("addToCart", payload);
       this.$refs.myModalRef.hide();
     }
   },
-  computed:{
-    
-    count(){
-      let avali = []
+  computed: {
+    count() {
+      let avali = [];
       for (let i = 1; i <= this.product.available; i++) {
-        let a ={ value: i, text: i }
-        avali.push(a)
+        let a = { value: i, text: i };
+        avali.push(a);
       }
-      return avali
+      return avali;
     }
   }
 };

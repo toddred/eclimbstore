@@ -51,15 +51,15 @@ export default new Vuex.Store({
       return state.carts.cartItems.splice(i,1);
     },
     addToCart(state,payload){
-      let item= state.prod.find(p=>p.productId == payload.productId)
-      // let ids = 0;
-      // state.carts.cartItems.map(p=>{
-      //   if(p.productId>ids) ids = p.productId;
-      // })
-      let myNewItem = new cartItem(item,payload.quantity,state.carts.cartItems.length)
-        //ids)
-      //alert(myNewItem.productId)
-      return state.carts.cartItems.push(myNewItem);
+      let myCartItem = state.carts.cartItems.find(c=>c.productId == payload.productId)
+      if(myCartItem){
+        let i= state.carts.cartItems.findIndex(c=>c.cartItemId == myCartItem.cartItemId)
+        return state.carts.cartItems[i].quantity+=payload.quantity;
+      } else {
+        let item= state.prod.find(p=>p.productId == payload.productId)
+        let myNewItem = new cartItem(item,payload.quantity,state.carts.cartItems.length)
+        return state.carts.cartItems.push(myNewItem);
+      }
     },
 
   },

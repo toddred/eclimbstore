@@ -11,22 +11,22 @@
         <router-link to="/account">Hi {{cust.firstName}}</router-link>
       </b-nav-item>
       <b-nav-item v-if="cust.accountId == null">
-       <login-item></login-item>
+        <login-item></login-item>
       </b-nav-item>
     </b-nav>
+    <br>
   </div>
 </template>
 
 <script>
-import loginItem from "../components/loginItem"
-import { mapState } from 'vuex';
+import loginItem from "../components/loginItem";
+import { mapState } from "vuex";
 export default {
-  name:"app-header",
-  components:{
+  name: "app-header",
+  components: {
     loginItem
   },
   computed: mapState(["cust"])
-  
 };
 </script>
 

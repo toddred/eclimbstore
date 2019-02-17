@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-col sm="12" md="6" lg="3">
+
       <b-card
         :title="'$'+product.price.toString()"
         :img-src="product.img"
@@ -11,10 +11,16 @@
         class="mb-2"
       >
         <p class="card-text">{{product.desc}}</p>
-        <b-button @click="addToCart" variant="outline-primary">Add to Cart</b-button>
-        <product-modal :product="product"></product-modal>
+        <b-row>
+          <b-col>
+            <b-button @click="addToCart" variant="outline-primary">Add to Cart</b-button>
+          </b-col>
+          <b-col>
+            <product-modal :product="product"></product-modal>
+          </b-col>
+        </b-row>
       </b-card>
-    </b-col>
+
   </div>
 </template>
 <script>
