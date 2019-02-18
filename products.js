@@ -5,7 +5,7 @@ export default  [
         price:219.99,
         available:4,
         rating:5,
-        img:'~/assets/static/rope.jpg/',
+        img:"rope",
         comments:[]
       },
       {
@@ -14,7 +14,7 @@ export default  [
         price:119.99,
         available:10,
         rating:5,
-        img:'https://picsum.photos/600/300/?image=25',
+        img:"shoes",
         comments:[]
       },
       {
@@ -23,7 +23,7 @@ export default  [
         price:99.99,
         available:3,
         rating:3.9,
-        img:'https://picsum.photos/600/300/?image=25',
+        img:"harness",
         comments:[]
       },
       {
@@ -32,7 +32,7 @@ export default  [
         price:9.99,
         available:40,
         rating:4,
-        img:'https://picsum.photos/600/300/?image=25',
+        img:"chalk",
         comments:[]
       },
       {
@@ -41,7 +41,7 @@ export default  [
         price:39.99,
         available:5,
         rating:4.4,
-        img:'https://picsum.photos/600/300/?image=25',
+        img:"belay",
         comments:[]
       }
 ]

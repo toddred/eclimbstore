@@ -2,11 +2,11 @@
   <div>
     <b-btn-toolbar>
       <b-btn-group class="mx-1">
-        <b-btn outline-primary @click="addItemButton">+</b-btn>
-        <b-btn @click="minusItemButton">-</b-btn>
+        <b-btn variant="outline-info" @click="addItemButton">+</b-btn>
+        <b-btn variant="outline-info" @click="minusItemButton">-</b-btn>
       </b-btn-group>
       <b-btn-group class="mx-1">
-        <b-btn @click="removeItemButton">Remove</b-btn>
+        <b-btn variant="outline-danger" @click="removeItemButton">Remove</b-btn>
       </b-btn-group>
     </b-btn-toolbar>
   </div>

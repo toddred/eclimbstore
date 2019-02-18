@@ -1,5 +1,6 @@
 export default 
   {
+    isAuth: true,
     accountId: 0,
     firstName: "Todd",
     lastName: "Rederburg",

@@ -7,10 +7,10 @@
       <b-nav-item>
         <router-link to="/cart">Cart</router-link>
       </b-nav-item>
-      <b-nav-item v-if="cust.accountId != null">
+      <b-nav-item v-if="cust.isAuth">
         <router-link to="/account">Hi {{cust.firstName}}</router-link>
       </b-nav-item>
-      <b-nav-item v-if="cust.accountId == null">
+      <b-nav-item v-else>
         <login-item></login-item>
       </b-nav-item>
     </b-nav>

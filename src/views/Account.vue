@@ -9,11 +9,13 @@
 <script>
 import customerInfo from "../components/customerInfo"
 import customerOrder from "../components/customerOrder"
+import customerComment from "../components/customerComment"
 import { mapState } from "vuex";
 export default {
     components:{
         customerInfo,
-        customerOrder
+        customerOrder,
+        customerComment
     },
       computed: mapState(["cust", "carts","comments"]) 
 

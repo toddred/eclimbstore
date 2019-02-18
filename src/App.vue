@@ -1,21 +1,33 @@
 <template>
   <div id="app">
-    <app-header/>
+    <div @click="clearTemp">
+          <app-header/>
     <b-container>
-        <b-alert show>Default Alert</b-alert>
+      <div v-if="tempMsg">
+        <b-alert ref="myAlert" show>{{tempMsg}}</b-alert>
+      </div>
       <router-view/>
     </b-container>
+    </div>
   </div>
 </template>
 <script>
 import appHeader from "./components/appHeader"
+import { mapState } from 'vuex'
 export default {
   components:{
     appHeader,
     
-  }
+  },
+  computed: mapState(["tempMsg"]),
+  methods:{
+    clearTemp: function() {
+      this.$store.commit("clearTemp")
+    }
+  } 
 }
 </script>
+
 
 <style>
 

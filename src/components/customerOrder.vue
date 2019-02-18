@@ -1,25 +1,35 @@
 <template>
-    <div>
-        <b-card title="Orders">
-            <div v-for="order in orders" :key="order.orderId">
-                <p>{{order.orderDate.toLocaleDateString()}}|${{order.total}}|{{order.shipped}}</p>
-           </div>
-        </b-card>
-    </div>
+  <div>
+    <b-card title="Orders">
+      <b-table :items="items">
+        <template slot="Details" slot-scope="computed">
+          <b-btn @click="review(computed.value)">Details</b-btn>
+        </template>
+      </b-table>
+    </b-card>
+  </div>
 </template>
 
 <script>
 import { mapState } from "vuex";
 export default {
-    
-name:'customer-order',
-components:{
+  name: "customer-order",
+  components: {},
+  
+  computed:{
+   items() {
+      return this.$store.getters.orders;
+    },
+    ...mapState(["cust", "orders"])
+  },
+  methods:{
+      review: id=>{
+          alert(id);
+      }
+  }
 
-},
-    computed: mapState(["cust", "orders"]) 
-}
+};
 </script>
 
 <style>
-
 </style>

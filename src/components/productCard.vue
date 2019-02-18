@@ -3,8 +3,8 @@
 
       <b-card
         :title="'$'+product.price.toString()"
-        :img-src="product.img"
-        img-alt="Image"
+        :img-src="getImgUrl(product.img)"
+        :img-alt="product.desc"
         img-top
         tag="article"
         style="max-width: 20rem;"
@@ -35,6 +35,9 @@ export default {
     addToCart: function() {
       let payload = { productId: this.product.productId, quantity: 1 };
       this.$store.commit("addToCart", payload);
+    },
+    getImgUrl: function(pic){
+      return `./assets/static/${pic}.jpg`;
     }
   }
 };
