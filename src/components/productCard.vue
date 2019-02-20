@@ -37,7 +37,7 @@ export default {
       this.$store.commit("addToCart", payload);
     },
     getImgUrl: function(pic){
-      return `/public/assets/img/${pic}.jpg`;
+      return `assets/img/${pic}.jpg`;
     }
   }
 };
