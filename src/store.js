@@ -99,7 +99,8 @@ export default new Vuex.Store({
     },
     clearTemp(state){
       setInterval(()=>{
-        return state.tempMsg ="";
+        state.tempMsg ="";
+        return ;
       },3000)
     }
 

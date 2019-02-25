@@ -2,8 +2,8 @@
   <div>
 
       <b-card
-        :title="'$'+product.price.toString()"
-        :img-src="getImgUrl(product.img)"
+        :title="'$'+product.price.toString()"       
+        img-src="https://via.placeholder.com/500"
         :img-alt="product.desc"
         img-top
         tag="article"
@@ -41,4 +41,5 @@ export default {
     }
   }
 };
+// :img-src="getImgUrl(product.img)"
 </script>

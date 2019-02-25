@@ -4,7 +4,7 @@
     <b-modal ref="myModalRef" hide-footer :title="product.desc">
       <div class="d-block text-center">
         
-        <b-img :src="product.img" fluid></b-img>
+        <b-img src="https://via.placeholder.com/700" fluid></b-img>
         <p>${{product.price}} | Rating: {{product.rating.toString()}} | Available: {{product.available.toString()}}</p>
       </div>
       <b-row>
