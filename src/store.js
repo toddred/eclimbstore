@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import customer from '../customer'
-import products from '../products'
-import carts from '../carts'
-import comments from '../comments'
+import customer from './assets/seed/customer'
+import products from './assets/seed/products'
+import carts from './assets/seed/carts'
+import comments from './assets/seed/comments'
 import cartItem from './assets/CartItem'
-import orders from '../orders'
+import orders from './assets/seed/orders'
 
 
 Vue.use(Vuex)
